@@ -66,14 +66,13 @@ class usuarioController{
                             redirectWithError("Seleção de assinatura inválida");
                     }
 
-                    $novousuario->setLogin();
-                    $novousuario->setsenha();
-                    $novousuario->setNomeUsu();
-                    $novousuario->setemail();
-                    $novousuario->setTelefone();
-                    $novousuario->setCEP();
-                    $novousuario->setCPF();
-                    $novousuario->set
+                    $novousuario->setLogin($login);
+                    $novousuario->setsenha($senha);
+                    $novousuario->setNomeUsu($NomeUsu);
+                    $novousuario->setemail($email);
+                    $novousuario->setTelefone($telefone);
+                    $novousuario->setCEP($CEP);
+                    $novousuario->setCPF($CPF);
 
 
                     

@@ -6,6 +6,7 @@ include("conexao.php");
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,26 +19,28 @@ include("conexao.php");
         }
     </script>
 </head>
+
 <body>
     <div class="conteiner">
         <header>
-            <div class="linkhome"><a href="index.php"><h1>Logo da biblioteca</h1></a></div>
-        
+            <div class="linkhome"><a href="./index.php">
+                    <h1>Logo da biblioteca</h1>
+                </a></div>
+
             <div class="registro">
-                
-    
-                <a href="login.php">
-                    
-                <img src="imagens/usu_icon.png" alt="20" width="80">
-                <p>Login</p>
+
+                <a href="./login.php">
+
+                    <img src="imagens/usu_icon.png" alt="20" width="80">
+                    <p>Login</p>
 
                 </a>
-            
+
             </div>
         </header>
         <main>
             <div class="centro">
-                
+
                 <div class="texto">
 
                     <h1>Biblio Text</h1>
@@ -53,7 +56,7 @@ include("conexao.php");
                     <li>Imagens e Fotografias: Desfrute de uma rica coleção de imagens, incluindo obras de arte, fotografias históricas e ilustrações.</li>
 
                     <p>Nosso portal é projetado para ser intuitivo e fácil de navegar, permitindo que você encontre rapidamente os recursos que precisa. Oferecemos diversas ferramentas de pesquisa e filtros avançados para refinar sua busca e facilitar o acesso ao conteúdo desejado.</p>
-                    
+
                     <p>A [Nome da Biblioteca Virtual] também se dedica a apoiar a educação e a pesquisa. Por isso, disponibilizamos uma série de recursos educativos e guias de estudo para estudantes e pesquisadores. Nossa equipe está constantemente trabalhando para expandir nossa coleção e garantir que você tenha acesso às informações mais recentes e relevantes.</p>
 
                     <p>Além disso, promovemos uma série de eventos online, como webinars, workshops e palestras, que visam enriquecer o conhecimento dos nossos usuários e fomentar a troca de ideias e experiências.</p>
@@ -70,43 +73,41 @@ include("conexao.php");
 
                 <div class="vendaPacote">
                     <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
-                    <p>Pacote inicial</p>
-                    valor do pacote
-                    R$50,00
-                    <button onclick="redirecionarComSelecao('opcao1')">Assinar</button>
-                
-                
-                    </div>
-                    <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
-                    <p>Pacote Intermediario</p>
-                    valor do pacote
-                    R$100,00
-                    <button onclick="redirecionarComSelecao('opcao2')">Assinar</button>
-                
-                
-                    </div>
-                    <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
-                    <p>Pacote Avançado</p>
-                    valor do pacote
-                    R$150,00
+                        <p>Pacote inicial</p>
+                        valor do pacote
+                        R$50,00
+                        <button onclick="redirecionarComSelecao('opcao1')">Assinar</button>
 
-                    <button onclick="redirecionarComSelecao('opcao3')">Assinar</button>
-                
-                
+
                     </div>
-                    
+                    <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
+                        <p>Pacote Intermediario</p>
+                        valor do pacote
+                        R$100,00
+                        <button onclick="redirecionarComSelecao('opcao2')">Assinar</button>
+
+
+                    </div>
+                    <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
+                        <p>Pacote Avançado</p>
+                        valor do pacote
+                        R$150,00
+
+                        <button onclick="redirecionarComSelecao('opcao3')">Assinar</button>
+
+
+                    </div>
 
                 </div>
 
             </div>
 
-                
-            
         </main>
         <footer>
             <a href="sobre.php">Sobre nós</a>
             <a href="#">Alguma coisa</a>
         </footer>
-    </div>  
+    </div>
 </body>
+
 </html>

@@ -6,26 +6,30 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeira area</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="conteiner">
         <header>
-            <a href="index.php"><h1>Logo da biblioteca</h1></a>
+            <a href="./index.php">
+                <h1>Logo da biblioteca</h1>
+            </a>
             <ul>
-                <a href="login.php">Login</a>
+                <a href="./login.php">Login</a>
             </ul>
         </header>
         <main>
             <div class="centro">
-                
+
                 <div class="texto">
-                <h1>Sobre nós</h1>
-                    
+                    <h1>Sobre nós</h1>
+
                     <p>A [Nome da Biblioteca Virtual] nasceu de um sonho humilde, mas ambicioso: tornar o conhecimento acessível a todos, independentemente de sua localização geográfica ou condição socioeconômica. Fundada em [ano de fundação], começamos nossa jornada com uma pequena coleção de 500 livros digitais, selecionados cuidadosamente para atender aos interesses de uma comunidade local de leitores ávidos e estudiosos dedicados.</p>
 
                     <p>Desde o início, nosso foco foi criar uma plataforma fácil de usar e repleta de conteúdos variados e de alta qualidade. Graças ao apoio de nossos usuários e parceiros, crescemos rapidamente, expandindo nosso acervo e nossa infraestrutura para atender uma demanda crescente por recursos digitais.</p>
@@ -48,12 +52,12 @@
                 </div>
             </div>
 
-            
         </main>
         <footer>
             <a href="sobre.php">Sobre nós</a>
             <a href="#">Alguma coisa</a>
         </footer>
-    </div>  
+    </div>
 </body>
+
 </html>

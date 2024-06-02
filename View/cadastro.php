@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,14 +57,17 @@
         };
     </script>
 </head>
+
 <body>
     <div class="conteiner">
         <header>
-            <div class="linkhome"><a href="index.php"><h1>Logo da biblioteca</h1></a></div>
-        
+            <div class="linkhome"><a href="./index.php">
+                    <h1>Logo da biblioteca</h1>
+                </a></div>
+
             <div class="registro">
-                
-                <a href="login.php">
+
+                <a href="./login.php">
                     <img src="imagens/usu_icon.png" alt="20" width="80">
                     <p>Login</p>
                 </a>
@@ -72,11 +76,11 @@
         <main>
             <div class="centro">
                 <div class="compra">
-                <?php
+                    <?php
                     if (isset($_GET['error'])) {
                         echo '<p style="color:red;">' . htmlspecialchars($_GET['error']) . '</p>';
                     }
-                ?>
+                    ?>
                     <form action="cadastrroFm.php" method="post">
                         <div class="form-group-inline">
                             <label for="name">Nome:</label>
@@ -135,4 +139,5 @@
         </footer>
     </div>
 </body>
+
 </html>
