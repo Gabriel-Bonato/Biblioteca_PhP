@@ -1,0 +1,139 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+header,main,footer{padding: 30px;}
+header{
+    grid-area: header;
+    background-color: red;
+    margin: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+
+
+    
+}
+main{
+    grid-area: main;
+    background-color: blue;
+    
+    
+}
+footer{
+    grid-area: footer;
+    background-color: green;
+    padding: 30px;
+}
+
+/*Usado para o cabeçalho*/
+
+.linkhome{
+    display: flex;
+    
+    justify-content: center;
+    margin-top: auto; /* Garante que o link centralizado fique no meio da página */
+}
+.registro{
+    display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px; /* Ajuste conforme necessário */
+      padding: 0 0px; /* Adiciona algum padding para posicionamento */
+    
+}
+
+
+/*Usado no centro*/
+
+
+.centro{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    background-color: bisque;
+    flex-direction: column;
+
+}
+
+.texto{
+width: 70%;  /* Defina a largura da div interna */
+  height: 90%; /* Defina a altura da div interna */
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 20px;
+
+  h1{
+    text-align: center;
+  }
+  p,li{
+    padding:10px;
+}
+}
+
+.vendaPacote{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.produto{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+    align-items: center;
+    
+}
+
+
+form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: self-start; /* Alinha os itens à esquerda */
+    width: 100%;
+    max-width: 400px;
+    background-color: rgb(221, 135, 135);
+    padding: 10px;
+    border-radius: 20px;
+  }
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+  }
+
+  .form-group-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .form-group-inline label {
+    margin-right: 10px; /* Espaço entre o label e o input */
+  }
+
+
+
+
+
+
+
