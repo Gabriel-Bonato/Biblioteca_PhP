@@ -54,8 +54,7 @@
 
         </main>
         <footer>
-            <a href="sobre.php">Sobre nós</a>
-            <a href="#">Alguma coisa</a>
+            <p>&copy; 2024 BibliotecaDaUP. Todos os direitos reservados.</</p>
         </footer>
     </div>
 </body>

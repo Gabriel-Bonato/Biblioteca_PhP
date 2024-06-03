@@ -11,7 +11,7 @@ include("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeira area</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styleIndex.css">
 
     <script>
         function redirecionarComSelecao(selecao) {
@@ -22,26 +22,31 @@ include("conexao.php");
 
 <body>
     <div class="conteiner">
+
         <header>
-            <div class="linkhome"><a href="./index.php">
-                    <h1>Logo da biblioteca</h1>
-                </a></div>
+            <div class="containerHeader">
 
-            <div class="registro">
+                <div class="logo"><img src="../imagens/logoMarrom.png" alt="logoDoSite"></div>
 
-                <a href="./login.php">
+                <div class="menu">
+                    <nav>
+                        <a href="./index.php">Home</a>
+                        <a href="#">Sobre nós</a>
+                        <a href="#">Comunidade</a>
+                    </nav>
+                </div>
 
-                    <img src="imagens/usu_icon.png" alt="20" width="80">
-                    <p>Login</p>
-
-                </a>
+                <div class="registro">
+                    <a href="./login.php">Login</a>
+                </div>
 
             </div>
         </header>
+
         <main>
             <div class="centro">
 
-                <div class="texto">
+                <section class="texto">
 
                     <h1>Biblio Text</h1>
 
@@ -64,20 +69,16 @@ include("conexao.php");
                     <p>Convidamos você a explorar a [Nome da Biblioteca Virtual] e descobrir um mundo de conhecimento ao seu alcance. Seja para fins educacionais, pesquisa acadêmica ou simplesmente para satisfazer sua curiosidade, nossa biblioteca é o seu ponto de acesso a um vasto universo de informações digitais.</p>
 
                     <p>Junte-se a nós e aproveite tudo o que a [Nome da Biblioteca Virtual] tem a oferecer. O conhecimento é a chave para o crescimento pessoal e coletivo, e estamos aqui para abrir essas portas para você.</p>
-                </div>
+                </section>
 
 
 
-
-
-
-                <div class="vendaPacote">
+                <section class="vendaPacote">
                     <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
                         <p>Pacote inicial</p>
                         valor do pacote
                         R$50,00
                         <button onclick="redirecionarComSelecao('opcao1')">Assinar</button>
-
 
                     </div>
                     <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
@@ -85,7 +86,6 @@ include("conexao.php");
                         valor do pacote
                         R$100,00
                         <button onclick="redirecionarComSelecao('opcao2')">Assinar</button>
-
 
                     </div>
                     <div class="produto"><img src="imagens/livros/51KvntpPRpL._SY445_SX342_.jpg" width="200px">
@@ -95,17 +95,14 @@ include("conexao.php");
 
                         <button onclick="redirecionarComSelecao('opcao3')">Assinar</button>
 
-
                     </div>
-
-                </div>
+                </section>
 
             </div>
 
         </main>
         <footer>
-            <a href="sobre.php">Sobre nós</a>
-            <a href="#">Alguma coisa</a>
+            <p>2024 BibliotecaDaUP. Todos os direitos reservados &copy;.</p>
         </footer>
     </div>
 </body>
