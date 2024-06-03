@@ -15,9 +15,7 @@ body {
     "footer footer footer";
 }
 
-header,
-main,
-footer {
+header, main, footer {
   padding: 30px;
 }
 
@@ -43,8 +41,7 @@ header {
   margin-right: 150px;
 }
 
-.logo,
-.registro {
+.logo, .registro {
   width: 15%;
 }
 
@@ -97,11 +94,12 @@ footer {
   grid-area: footer;
   background-color: #3f2a0ae7;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   color: white;
 }
-footer p{
-  color: white;
+
+footer p {
+  color: rgba(255, 255, 255, 0.74);
 }
 
 /*Usado no centro*/
@@ -112,9 +110,9 @@ footer p{
   justify-content: center;
   /* Centraliza horizontalmente */
   align-items: center;
-  background-color: bisque;
+  background-color: #463b2be7;
   flex-direction: column;
-
+  border-radius: 10px;
 }
 
 .texto {
@@ -122,16 +120,18 @@ footer p{
   /* Defina a largura da div interna */
   height: 90%;
   /* Defina a altura da div interna */
-  background-color: lightblue;
+  background-color: #795f39;
+  color: rgba(255, 255, 255, 0.74);
   padding: 20px;
   border-radius: 20px;
+  margin: 30px;
+
 
   h1 {
     text-align: center;
   }
 
-  p,
-  li {
+  p,li {
     padding: 10px;
   }
 }
@@ -141,6 +141,7 @@ footer p{
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .produto {
@@ -149,8 +150,11 @@ footer p{
   padding: 10px;
   margin: 0;
   align-items: center;
-
 }
+.produto p{
+  margin: 3px;
+}
+
 
 
 form {
@@ -183,4 +187,22 @@ form {
 .form-group-inline label {
   margin-right: 10px;
   /* Espaço entre o label e o input */
+}
+
+/*Botão de assinatura*/
+
+button {
+  background-color: rgb(202, 174, 48);
+  width: 50%;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.74);
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  margin-top: 6px;
+}
+
+button:hover {
+  background-color: rgb(202, 174, 48, 0.7);
+  cursor: pointer;
 }
