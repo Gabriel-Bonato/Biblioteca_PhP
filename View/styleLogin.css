@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -27,7 +28,6 @@ input {
 
 input:hover {
     background-color: rgb(255, 255, 255, 0.8);
-    cursor: pointer;
 }
 
 input::placeholder {
@@ -42,4 +42,5 @@ input::placeholder {
 
 #button:hover {
     background-color: rgb(202, 174, 48, 0.7);
+    cursor: pointer;
 }
