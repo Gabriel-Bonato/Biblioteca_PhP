@@ -13,11 +13,24 @@
     <h1>Bem-vindo, <?php //echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
     <p>Você está logado como Funcionário. Aqui você pode gerenciar o sistema.</p>
 
-    <button onclick="window.location.href='perfil.php'">Perfil</button>
-    <button onclick="window.location.href='listarusuario.php'">Listar Usuários</button>
-    <button onclick="window.location.href='funcionarios.php'">Funcionários</button>
-    <button onclick="window.location.href='livros.php'">Livros</button>
-    <button onclick="window.location.href='edicaolivros.php'">LivrosEXPC</button>
-    <button onclick="window.location.href='home_funcionario.php?logout=true'">Logout</button>
+    <form method="post" action="perfil.php">
+        <button type="submit" name="perfil">Perfil</button>
+    </form>
+    <form method="post" action="listarusuario.php">
+        <button type="submit" name="listarusuario">Listar Usuários</button>
+    </form>
+    <form method="post" action="../Controller/FuncionariosController.php">
+        <button type="submit" name="funcionario">Funcionários</button>
+    </form>
+    <form method="post" action="livros.php">
+        <button type="submit">Livros</button>
+    </form>
+    <form method="post" action="edicaolivros.php">
+        <button type="submit">LivrosEXPC</button>
+    </form>
+    <form method="post" action="home_funcionario.php">
+        <input type="hidden" name="logout" value="true">
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

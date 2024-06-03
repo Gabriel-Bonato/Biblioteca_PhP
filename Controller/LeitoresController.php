@@ -1,5 +1,6 @@
 <?php
 include_once(__DIR__ . '/../Model/leitores.php');
+session_start();
 class LeitoresController{
     public function cadastrarleitor(){
         
@@ -43,25 +44,41 @@ class LeitoresController{
 
 
 
-            $result = $leitor->salvarNoBancoDeDados();
-
-            if($result == false){
-                // Redireciona para a página de cadastro com uma mensagem de erro
-                header("Location: ../View/cadastro.php?error=2");
-                exit();
-            }
-            else{
-                // Redireciona para uma página de sucesso ou qualquer outra página desejada
-                header("Location: ../View/login.php");
-                exit();
-            }
+            $leitor->salvarNoBancoDeDados();
 
 
             
 
-            
+            // Redireciona para uma página de sucesso ou qualquer outra página desejada
+            header("Location: ../View/login.php");
+            exit();
         }
 
+    }
+    // Função para buscar os dados do usuário
+    public function buscarDadosUsuario($loginUsuario) {
+        $usuario = $loginUsuario;
+        $leitor = new leitores();
+
+        
+    
+        if ($usuario) {
+            $dadosUsuario = $leitor->buscarUsuario($usuario);
+            
+             // Armazena os dados do usuário na sessão
+            $_SESSION['dadosUsuario'] = $dadosUsuario;
+
+            
+            // Redireciona para a página de perfil
+            header("Location: ../View/perfil.php");
+            exit();
+            
+
+        } else {
+            // Redireciona para a página de login se não houver usuário
+            header("Location: login.php");
+            exit();
+        }
     }
 }
 
@@ -69,6 +86,11 @@ class LeitoresController{
 if(isset($_POST['cadastrar']) && !empty($_POST['cadastrar'])){
     $leitorController = new LeitoresController();
     $leitorController->cadastrarleitor();
+}
+if(isset($_POST['perfil'])){
+    $perfilLeitor = new LeitoresController();
+    $usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : (isset($_COOKIE['usuario']) ? $_COOKIE['usuario'] : null);
+    $perfilLeitor->buscarDadosUsuario($usuario);
 }
 
 
