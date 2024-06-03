@@ -6,6 +6,7 @@ class Cep{
     private $cidade;
     private $estado;
     private $uf;
+    private $logradouro;
 
      // Getter para codigoCep
      public function getCodigoCep() {
@@ -27,6 +28,11 @@ class Cep{
         return $this->uf;
     }
 
+    // Getter para logradouro
+    public function getlogradouro() {
+        return $this->logradouro;
+    }
+
     
     public function CEP($endereco){
         $cep = $endereco;
@@ -46,6 +52,9 @@ class Cep{
         $cidade = $cep->localidade;
         $UF = $cep->uf;
         $CEP = $cep->cep;
+        $logradouro = $cep->logradouro;
+
+        
         
         switch ($UF) {
             case 'AC':
@@ -139,6 +148,7 @@ class Cep{
         $this->uf = $UF;
         $this->codigoCep = $CEP;
         $this->estado = $estado;
+        $this->logradouro = $logradouro;
 
         return true;
         

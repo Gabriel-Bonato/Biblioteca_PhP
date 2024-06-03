@@ -74,6 +74,7 @@ include_once(__DIR__ . '/../Model/CEP.php');
     //Funções
 
     public function salvarNoBancoDeDados() {
+        try{
         // Conectar ao banco de dados
         $conn = Conexao::conectar();
         $cep = new Cep();
@@ -86,6 +87,8 @@ include_once(__DIR__ . '/../Model/CEP.php');
         $cidade = $cep->getCidade();
         $estado = $cep->getEstado();
         $uf = $cep->getUf();
+        $logradouro= $cep->getlogradouro();
+
 
         // Preparar a instrução SQL para inserir os dados da tabela cep
         $stmt = $conn->prepare("INSERT INTO cep (codigoCEP, cidade, estado,uf) VALUES (:CodeCEP,:cidade ,:estado ,:uf)");
@@ -111,24 +114,26 @@ include_once(__DIR__ . '/../Model/CEP.php');
 
         // Obter os valores das variáveis usando getters
         $nomeLeitor = $this->getNomeLeitor();
-        $endereco = $this->getEndereco();
         $phone = $this->getPhone();
         
 
         // Preparar a instrução SQL para inserir os dados da tabela leitores
         $stmt = $conn->prepare("INSERT INTO leitor (nomeLeitor, endereco, CEPID,phone,idUser) VALUES (:nomeLeitor,:endereco ,:id_cep,:phone,:id_user )");
         $stmt->bindParam("nomeLeitor", $nomeLeitor);
-        $stmt->bindParam("endereco", $endereco);
+        $stmt->bindParam("endereco", $logradouro);
         $stmt->bindParam("phone", $phone);
         $stmt->bindParam("id_cep", $id_cep);
         $stmt->bindParam("id_user", $id_user);
 
         $stmt->execute();
         return true;
+    }
+    catch(PDOException $error){
+        echo "ERRO => " . $error->getMessage();
+            return null;
+    }
 
 
     }
 
  }
-
-

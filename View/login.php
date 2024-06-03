@@ -11,8 +11,20 @@
 <body>
     <main>
         <section>
-            <h1>Fazer Login</h1>
-            <form action="autenticar.php" method="post">
+            <h1>Fazer Login</h1><?php
+            // Exibe a mensagem de erro, se existir
+
+                    if (isset($_GET['error']) && $_GET['error'] == 1) {
+                        echo '<p style="color:red;">Por favor, preencha todos os campos corretamente!</p>';
+                    }
+                    elseif(isset($_GET['error']) && $_GET['error'] == 2) {
+                        echo '<p style="color:red;">Erro: ao cadastra, solicite suporte</p>';
+                    }
+                    elseif(isset($_GET['error']) && $_GET['error'] == 3){
+                        echo '<p style="color:red;">login e senha incorretos!</p>';
+                    }
+                    ?>
+            <form action="../Controller/usuarioController.php" method="post">
 
                 <input type="text" name="loginUsu" placeholder="Login/Usuario">
                 <br><br>
@@ -20,7 +32,7 @@
                 <input type="password" name="senhaUSu" placeholder="Senha">
                 <br><br>
 
-                <input id="button" type="submit" value="Entrar">
+                <input id="button" type="submit" value="Entrar" name="login">
             </form>
         </section>
     </main>

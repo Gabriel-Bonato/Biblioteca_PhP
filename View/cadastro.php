@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
-    <link rel="stylesheet" href="./styleCadastro.css">
+    <link rel="stylesheet" href="./style.css">
     <script>
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -48,55 +47,76 @@
         };
     </script>
 </head>
-
 <body>
-    <main>
-        <section>
-
-            <h1>Cadastro</h1>
-
-            <?php
-            // Exibe a mensagem de erro, se existir
-            if (isset($_GET['error']) && $_GET['error'] == 1) {
-                echo '<p style="color:red;">Todos os campos são obrigatórios!</p>';
-            }
-            ?>
-            <form action="../Controller/LeitoresController.php" method="post">
-
-                <input type="text" id="nomeLeitor" name="nomeLeitor" placeholder="Nome do Leitor">
-                <br><br>
-
-                <input type="text" id="endereco" name="endereco" placeholder="Endereço">
-                <br><br>
-
-                <input type="text" id="phone" name="phone" placeholder="Telefone para contato">
-                <br><br>
-
-                <input type="text" name="CEPID" id="CEPID" placeholder="CEP" oninput="maskCEP(this)" maxlength="9">
-                <br><br>
-
-                <input type="text" name="login" id="login" placeholder="Seu login">
-                <br><br>
-
-                <input type="password" name="senha" id="senha" placeholder="Sua senha">
-                <br><br>
-
-                <label id="tipoAssinatura" for="tipoAssinatura">Tipo de Assinatura</label><br>
-                <select name="selecao" id="selecao" onchange="atualizarPreco()">
-                    <option value="pacote1" id="opcao1">Pacote Inicial</option>
-                    <option value="pacote2" id="opcao2">Pacote Intermediario</option>
-                    <option value="pacote3" id="opcao3">Pacote Avançado</option>
-                </select>
-                <br><br>
-
-                <input id="button" type="submit" value="Enviar" name="cadastrar">
-
-            </form>
-
-            <p>Preço: <span id="preco">R$ 50,00</span></p>
-
-        </section>
-    </main>
+    <div class="conteiner">
+        <header>
+            <div class="linkhome"><a href="./index.php">
+                <h1>Logo da biblioteca</h1>
+            </a></div>
+            <div class="registro">
+                <a href="./login.php">
+                    <img src="imagens/usu_icon.png" alt="20" width="80">
+                    <p>Login</p>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="centro">
+                <div class="compra">
+                    <?php
+                    // Exibe a mensagem de erro, se existir
+                    if (isset($_GET['error']) && $_GET['error'] == 1) {
+                        echo '<p style="color:red;">Todos os campos são obrigatórios!</p>';
+                    }
+                    elseif(isset($_GET['error']) && $_GET['error'] == 2) {
+                        echo '<p style="color:red;">Algo deu errado!Tente novamente!</p>';
+                    }
+                    ?>
+                    <form action="../Controller/LeitoresController.php" method="post">
+                        <div class="form-group-inline">
+                            <label for="nomeLeitor">Nome:</label>
+                            <input type="text" id="nomeLeitor" name="nomeLeitor">
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="endereco">Endereço:</label>
+                            <input type="text" id="endereco" name="endereco">
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="phone">Telefone:</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="CEPID">CEP:</label>
+                            <input type="text" name="CEPID" id="CEPID" placeholder="CEP" oninput="maskCEP(this)" maxlength="9">
+                        </div>
+                        <div class="form-group-inline">
+                            <label>Login</label>
+                            <input type="text" name="login" id="login" placeholder="Seu login">
+                        </div>
+                        <div class="form-group-inline">
+                            <label>Senha:</label>
+                            <input type="password" name="senha" id="senha" placeholder="Sua senha">
+                        </div>
+                        <div class="form-group-inline">
+                            <label for="tipoAssinatura">Tipo de Assinatura:</label>
+                            <select name="selecao" id="selecao" onchange="atualizarPreco()">
+                                <option value="pacote1" id="opcao1">Pacote Inicial</option>
+                                <option value="pacote2" id="opcao2">Pacote Intermediario</option>
+                                <option value="pacote3" id="opcao3">Pacote Avançado</option>
+                            </select>
+                        </div>
+                        <div class="form-group-inline">
+                            <input type="submit" value="Enviar" name="cadastrar">
+                        </div>
+                    </form>
+                    <p>Preço: <span id="preco">R$ 50,00</span></p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="sobre.php">Sobre nós</a>
+            <a href="#">Alguma coisa</a>
+        </footer>
+    </div>
 </body>
-
 </html>

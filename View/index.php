@@ -1,8 +1,5 @@
 <!--index.php-->
-<?php
-include("conexao.php");
 
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +34,7 @@ include("conexao.php");
                 </div>
 
                 <div class="registro">
-                    <a href="./login.php">Login</a>
+                    <a href="../Controller/redirecionar_login.php">Login</a>
                 </div>
 
             </div>

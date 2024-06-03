@@ -43,14 +43,23 @@ class LeitoresController{
 
 
 
-            $leitor->salvarNoBancoDeDados();
+            $result = $leitor->salvarNoBancoDeDados();
+
+            if($result == false){
+                // Redireciona para a página de cadastro com uma mensagem de erro
+                header("Location: ../View/cadastro.php?error=2");
+                exit();
+            }
+            else{
+                // Redireciona para uma página de sucesso ou qualquer outra página desejada
+                header("Location: ../View/login.php");
+                exit();
+            }
 
 
             
 
-            // Redireciona para uma página de sucesso ou qualquer outra página desejada
-            header("Location: ../View/login.php");
-            exit();
+            
         }
 
     }
