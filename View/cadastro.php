@@ -54,7 +54,7 @@
                 <h1>Logo da biblioteca</h1>
             </a></div>
             <div class="registro">
-                <a href="./login.php">
+                <a href="../Controller/redirecionar_login.php">
                     <img src="imagens/usu_icon.png" alt="20" width="80">
                     <p>Login</p>
                 </a>
