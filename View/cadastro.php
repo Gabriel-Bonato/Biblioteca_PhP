@@ -134,8 +134,7 @@
             </div>
         </main>
         <footer>
-            <a href="sobre.php">Sobre nós</a>
-            <a href="#">Alguma coisa</a>
+            <p>2024 BibliotecaDaUP. Todos os direitos reservados &copy;.</p>
         </footer>
     </div>
 </body>
