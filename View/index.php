@@ -31,7 +31,7 @@ include("conexao.php");
                 <div class="menu">
                     <nav>
                         <a href="./index.php">Home</a>
-                        <a href="#">Sobre nós</a>
+                        <a href="./sobre.php">Sobre nós</a>
                         <a href="#">Comunidade</a>
                     </nav>
                 </div>

@@ -11,23 +11,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeira area</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styleIndex.css">
 </head>
 
 <body>
     <div class="conteiner">
         <header>
-            <a href="./index.php">
-                <h1>Logo da biblioteca</h1>
-            </a>
-            <ul>
-                <a href="./login.php">Login</a>
-            </ul>
+            <div class="containerHeader">
+
+                <div class="logo"><img src="../imagens/logoMarrom.png" alt="logoDoSite"></div>
+
+                <div class="menu">
+                    <nav>
+                        <a href="./index.php">Home</a>
+                        <a href="./sobre.php">Sobre nós</a>
+                        <a href="#">Comunidade</a>
+                    </nav>
+                </div>
+
+                <div class="registro">
+                    <a href="./login.php">Login</a>
+                </div>
+
+            </div>
         </header>
         <main>
             <div class="centro">
 
-                <div class="texto">
+                <section class="texto">
                     <h1>Sobre nós</h1>
 
                     <p>A [Nome da Biblioteca Virtual] nasceu de um sonho humilde, mas ambicioso: tornar o conhecimento acessível a todos, independentemente de sua localização geográfica ou condição socioeconômica. Fundada em [ano de fundação], começamos nossa jornada com uma pequena coleção de 500 livros digitais, selecionados cuidadosamente para atender aos interesses de uma comunidade local de leitores ávidos e estudiosos dedicados.</p>
@@ -49,12 +60,12 @@
 
                     <p>Convidamos você a explorar a [Nome da Biblioteca Virtual], onde o conhecimento e a cultura estão ao seu alcance. Junte-se a nós e faça parte de uma comunidade global que valoriza o aprendizado contínuo e o acesso democrático ao conhecimento.</p>
 
-                </div>
+                </section>
             </div>
 
         </main>
         <footer>
-            <p>&copy; 2024 BibliotecaDaUP. Todos os direitos reservados.</</p>
+            <p>2024 BibliotecaDaUP. Todos os direitos reservados &copy;.</p>
         </footer>
     </div>
 </body>
