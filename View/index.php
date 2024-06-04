@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeira area</title>
+    <title>Pagina inicial</title>
     <link rel="stylesheet" href="./styleIndex.css">
 
     <script>
@@ -29,7 +29,7 @@
                     <nav>
                         <a href="./index.php">Home</a>
                         <a href="./sobre.php">Sobre nós</a>
-                        <a href="#">Comunidade</a>
+                        <a href="./comunidade.php">Comunidade</a>
                     </nav>
                 </div>
 

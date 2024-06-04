@@ -83,6 +83,7 @@ header {
 
 /*fim do cabeçalho*/
 
+
 main {
   grid-area: main;
   background-color: #463b2be7;
@@ -203,4 +204,11 @@ button {
 button:hover {
   background-color: rgb(202, 174, 48, 0.7);
   cursor: pointer;
+}
+
+/* comunidade */
+
+.imgSocialMedia{
+  width: 10px;
+  height: auto;
 }
