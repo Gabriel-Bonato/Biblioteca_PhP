@@ -35,7 +35,7 @@
 
                 <input id="button" type="submit" value="Entrar" name="login">
             </form>
-            <a href="../View/recuperarsenha.php">Esquici minha senha</a>
+            <a class="esqueci-senha" href="../View/recuperarsenha.php">Esqueci minha senha</a>
         </section>
     </main>
 

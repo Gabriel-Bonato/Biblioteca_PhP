@@ -17,6 +17,11 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
 </head>
 <body>
     <h1>Lista de Livros</h1>
+    <?php
+    if ($_SESSION['tipo'] === "funcionário") {?>
+    <button onclick="window.location.href='./cadastrarLivro.php'">Adicionar Livro</button><?php
+    }
+    ?>
     <table>
         <thead>
             <tr>
@@ -28,7 +33,8 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
                 <?php
                 if ($_SESSION['tipo'] === "funcionário") {
                 ?>
-                <th>Ações</th>
+                <th>Ação</th>
+
                 <?php
                 }
                 ?>
@@ -41,17 +47,23 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
                 foreach ($livros as $livro) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($livro['livroID']) . "</td>";
-                    
-                    
+
+
+
                     echo "<td>" . htmlspecialchars($livro['titulo']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['anoPublicacao']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['genero']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['autor']) . "</td>";
-                    if ($_SESSION['tipo'] === "funcionário") {
-                    echo "<td class='action-buttons'>";
-                        echo "<input type='button' value='Editar' data-livro-id='" . htmlspecialchars($livro['livroID']) . "'>";
-                        echo "<input type='button' value='Deletar' data-livro-id='" . htmlspecialchars($livro['livroID']) . "'>";
+
+
+                    if ($_SESSION['tipo'] === "funcionário") {?>
+                        <td><a href="../Controller/LivrosController.php?id=<?php echo $livro['livroID']; ?>">Delete</a>
+
+                        <a href="./editar_livro.php?id=<?php echo $livro['livroID']; ?>">Editar</a></td>
+                        <?php
+
                     }
+
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -81,4 +93,3 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
         });
     </script>
 </body>
-</html>

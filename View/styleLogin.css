@@ -44,3 +44,14 @@ input::placeholder {
     background-color: rgb(202, 174, 48, 0.7);
     cursor: pointer;
 }
+
+a {
+    color: #336699; 
+    text-decoration: none; 
+}
+
+
+a.esqueci-senha {
+    display: block; 
+    margin-top: 50px;
+}
