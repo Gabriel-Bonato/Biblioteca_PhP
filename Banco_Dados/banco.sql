@@ -1,9 +1,8 @@
 create schema biblioteka;
 use biblioteka;
 DELIMITER $$
-CREATE PROCEDURE RecreateTables()
 BEGIN
-    -- Drop tables if they exist
+    -- dropando as table caso existam
     DROP TABLE IF EXISTS livro_autor;
     DROP TABLE IF EXISTS livro;
     DROP TABLE IF EXISTS autor;
@@ -13,7 +12,7 @@ BEGIN
 
     -- Create CEP table
     CREATE TABLE CEP (
-        CEPID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        cepID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         codigoCEP VARCHAR(10) NOT NULL,
         cidade VARCHAR(100) NOT NULL,
         estado VARCHAR(50) NOT NULL,
@@ -67,12 +66,12 @@ CREATE TABLE `biblioteka`.`leitor` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-    -- Create autor table
+  /*  -- Create autor table
     CREATE TABLE autor (
         autorID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         nomeAutor VARCHAR(100) NOT NULL,
         bio TEXT
-    );
+    );*/
 
     -- Create livro table
     CREATE TABLE livro (
@@ -82,32 +81,16 @@ CREATE TABLE `biblioteka`.`leitor` (
         genero VARCHAR(50)
     );
 
-    -- Create livro_autor table
+ /*   -- Create livro_autor table
     CREATE TABLE livro_autor (
         livroID INT NOT NULL,
         autorID INT NOT NULL,
         PRIMARY KEY (livroID, autorID),
         FOREIGN KEY (livroID) REFERENCES livro(livroID),
         FOREIGN KEY (autorID) REFERENCES autor(autorID)
-    );
+    );*/
 END$$
 
 DELIMITER ;
-
--- Call the procedure to recreate tables
-CALL RecreateTables();
-
-
-
-
-  
-  
-  
-  select * from cep;
-  select * from usuario;
-select * from leitor;
-
-
-
 
   
