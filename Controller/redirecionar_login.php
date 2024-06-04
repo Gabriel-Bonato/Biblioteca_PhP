@@ -19,7 +19,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['tipo'])) {
 if ($tipo === 'leitor') {
     header("Location: ../View/home_leitor.php");
     exit();
-} elseif ($tipo === 'funcionario') {
+} elseif ($tipo === 'funcionário') {
     header("Location: ../View/home_funcionário.php ");
     exit();
 } else {
