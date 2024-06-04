@@ -1,63 +1,84 @@
+<?php
+session_start();
+
+$livros = isset($_SESSION['livros']) ? $_SESSION['livros'] : [];
+
+// Obtenção do tipo de usuário a partir do cookie
+$tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Livros</title>
-    <link rel="stylesheet" href="styleListarLivro.css">
+    <link rel="stylesheet" href="./styleListF.css">
 </head>
 <body>
-    <section>
-        <h1>Lista de Livros</h1>
+    <h1>Lista de Livros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Ano de Publicação</th>
+                <th>Gênero</th>
+                <th>Autor</th>
+                <?php
+                if ($_SESSION['tipo'] === "funcionário") {
+                ?>
+                <th>Ações</th>
+                <?php
+                }
+                ?>
+                <form action="../Controller/LivrosController.php" method="post"></form>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if (!empty($livros)) {
+                foreach ($livros as $livro) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($livro['livroID']) . "</td>";
+                    
+                    
+                    echo "<td>" . htmlspecialchars($livro['titulo']) . "</td>";
+                    echo "<td>" . htmlspecialchars($livro['anoPublicacao']) . "</td>";
+                    echo "<td>" . htmlspecialchars($livro['genero']) . "</td>";
+                    echo "<td>" . htmlspecialchars($livro['autor']) . "</td>";
+                    if ($_SESSION['tipo'] === "funcionário") {
+                    echo "<td class='action-buttons'>";
+                        echo "<input type='button' value='Editar' data-livro-id='" . htmlspecialchars($livro['livroID']) . "'>";
+                        echo "<input type='button' value='Deletar' data-livro-id='" . htmlspecialchars($livro['livroID']) . "'>";
+                    }
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'>Nenhum livro encontrado</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+    <button id="home-button">Home</button>
 
-        <?php
-        session_start();
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let tipoUsuario = "<?php echo $_SESSION['tipo']; ?>";
 
-        if (isset($_SESSION['livros']) && !empty($_SESSION['livros'])) {
-            $livros = $_SESSION['livros'];
-        } else {
-            echo "<p>Nenhum livro encontrado.</p>";
-            exit();
-        }
-        ?>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Ano de Publicação</th>
-                    <th>Gênero</th>
-                    <th>Autor</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($livros as $livro): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($livro['livroID']); ?></td>
-                    <td><?php echo htmlspecialchars($livro['titulo']); ?></td>
-                    <td><?php echo htmlspecialchars($livro['anoPublicacao']); ?></td>
-                    <td><?php echo htmlspecialchars($livro['genero']); ?></td>
-                    <td><?php echo htmlspecialchars($livro['autor']); ?></td>
-                    <td>
-                        <form action="../Controller/LivroController.php" method
-
-="post" style="display:inline;">
-                            <input type="hidden" name="livroID" value="<?php echo htmlspecialchars($livro['livroID']); ?>">
-                            <button type="submit" name="excluirLivro" id="button">Excluir</button>
-                        </form>
-                        <form action="editar_livro.php" method="get" style="display:inline;">
-                            <input type="hidden" name="livroID" value="<?php echo htmlspecialchars($livro['livroID']); ?>">
-                            <button type="submit" name="editarLivro" id="button">Editar</button>
-                        </form>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
-        <br>
-        <a href="cadastro_livro.php" id="button">Cadastrar Novo Livro</a>
-    </section>
+            // Ajuste do botão Home
+            let homeButton = document.getElementById("home-button");
+            if (tipoUsuario === "funcionário") {
+                homeButton.addEventListener("click", function() {
+                    window.location.href = "home_funcionario.php";
+                });
+            } else if (tipoUsuario === "leitor") {
+                homeButton.addEventListener("click", function() {
+                    window.location.href = "home_leitor.php";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
