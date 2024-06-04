@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once(__DIR__ . '/../Model/LivroModel.php');
+include_once(__DIR__ . '/../Model/livros.php');
 
 class LivroController {
     
