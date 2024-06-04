@@ -11,22 +11,7 @@ $usuarios = isset($_SESSION['usuarios']) ? $_SESSION['usuarios'] : [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="./styleListF.css">
 </head>
 <body>
     <h1>Lista de Usuários</h1>
@@ -45,6 +30,6 @@ $usuarios = isset($_SESSION['usuarios']) ? $_SESSION['usuarios'] : [];
         <?php endforeach; ?>
     </table>
     <br>
-    <a href="../View/home_funcionario.php">Voltar para a página inicial</a>
+    <button onclick="window.location.href='./home_funcionario.php'">Voltar Home</button>
 </body>
 </html>

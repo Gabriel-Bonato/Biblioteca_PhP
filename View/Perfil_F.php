@@ -55,11 +55,13 @@ if (isset($_SESSION['dadosUsuario'])) {
                 <div><?php echo htmlspecialchars($CPF); ?></div>
             </div>
 
-            <a href="./home_funcionario.php">Voltar ao home</a>
+            
             
         <?php else: ?>
             <p>Não foi possível carregar os dados do usuário.</p>
         <?php endif; ?>
+        <button onclick="window.location.href='./home_funcionario.php'">Voltar Home</button>
     </section>
+    
 </body>
 </html>

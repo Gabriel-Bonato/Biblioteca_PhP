@@ -11,6 +11,7 @@ include_once '../Model/Funcionario.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Novo Funcionário</title>
+    <link rel="stylesheet" href="./styleCadastroF.css">
 </head>
 <body>
     <h1>Cadastrar Novo Funcionário</h1>

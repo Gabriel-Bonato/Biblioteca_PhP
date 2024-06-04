@@ -12,21 +12,9 @@ $resultados = $_SESSION['resultados'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funcionários</title>
+    <link rel="stylesheet" href="./styleListF.css">
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+    
     </style>
 </head>
 <body>
@@ -57,6 +45,6 @@ $resultados = $_SESSION['resultados'];
             <?php endif; ?>
         </tbody>
     </table>
-    <a href="../View/home_funcionario.php">Home</a>
+    <button onclick="window.location.href='./home_funcionario.php'">Voltar Home</button>
 </body>
 </html>
