@@ -8,7 +8,8 @@ class LivroController {
         $livroModel = new LivroModel();
         $livros = $livroModel->listarLivros();
         $_SESSION['livros'] = $livros;
-        header("Location: ../View/lista_livros.php");
+        header("Location: ../View/Listar_livro.php");
+        //header("Location: ../View/lista_livros.php");
         exit();
     }
 
@@ -79,4 +80,9 @@ if (isset($_POST['excluirLivro'])) {
     $livroController = new LivroController();
     $livroController->excluirLivro();
 }
+if (isset($_POST['listarLivro'])) {
+    $livroController = new LivroController();
+    $livroController->listarLivros();
+}
+
 ?>

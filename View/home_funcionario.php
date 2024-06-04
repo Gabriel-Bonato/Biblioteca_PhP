@@ -23,8 +23,8 @@ include('../Controller/verifica_funcionario.php');
     <form method="post" action="../Controller/FuncionariosController.php">
         <button type="submit" name="funcionario">Funcionários</button>
     </form>
-    <form method="post" action="livros.php">
-        <button type="submit">Livros</button>
+    <form method="post" action="../Controller/LivrosController.php">
+        <button type="submit" name="listarLivro">Livros</button>
     </form>
     <form method="post" action="home_funcionario.php?logout=true">
         <input type="hidden" name="logout" value="true">

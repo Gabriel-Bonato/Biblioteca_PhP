@@ -19,8 +19,8 @@ include('../Controller/verifica_leitor.php');
     <button type="submit" name="perfil">Perfil</button>
     </form>
 
-    <form method="post" action="livros.php">
-        <button type="submit">Livros</button>
+    <form method="post" action="../Controller/LivrosController.php">
+        <button type="submit" name="listarLivro">Livros</button>
     </form>
 
     <form method="post" action="home_leitor.php?logout=true">
