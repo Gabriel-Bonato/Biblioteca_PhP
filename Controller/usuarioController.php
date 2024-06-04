@@ -1,5 +1,6 @@
 <?php
 include_once(__DIR__ . '/../Model/Usuario.php');
+session_start();
 
 class usuarioController{
     public function login(){
@@ -14,12 +15,9 @@ class usuarioController{
         $loginUsu = $_POST["loginUsu"];
         $senhaUSu = $_POST["senhaUSu"];
 
-        
-
         $user->setLogin($loginUsu);
         $user->setSenha($senhaUSu);
-       
-
+    
         $result = $user->verificarLogin();
         $tipo=$user->verificarTipo($result);
         
@@ -61,6 +59,43 @@ class usuarioController{
         
         
     }
+
+}
+    public function ListarUsuarios(){
+        $user = new Usuario();
+
+        $result = $user->buscarUsuariosNoBanco();
+    
+        if($result == null){
+            echo "Erro ao encontrar usuário";
+        }
+        else{
+            // Armazenar os dados dos usuários na sessão
+            $_SESSION['usuarios'] = $result;
+    
+            // Redirecionar para a página onde os usuários serão exibidos
+            header("Location: ../View/listar_usuarios.php");
+            exit();
+        }
+    }
+
+    public function deletarUsuario($idUsuario){
+        $user = new Usuario();
+
+        $tipo = $user->verificartipo($idUsuario);
+        
+        $result = $user->DeletarUsuario($idUsuario,$tipo);
+        var_dump($result);
+        if($result==false){
+            header("Location: ../View/listar_usuarios?error=1");
+            exit();
+            
+        }
+       else{
+            header("Location: ../View/home_funcionario.php");
+            exit();
+        }
+
     }
 }
 
@@ -70,5 +105,17 @@ class usuarioController{
         $userController = new usuarioController();
         $userController->login();
     }
-
+    if (isset($_POST['listarusuario'])) {
+        $userController = new usuarioController();
+        $userController->ListarUsuarios();
+       
+    }
+    if($_GET['acao'] == 'delete'){
+        if(isset($_GET['id']) && !empty($_GET['id']))
+        {
+            $idUsuario = $_GET['id'];
+            $userController = new usuarioController();
+            $userController->deletarUsuario($idUsuario);
+        }
+    } 
 ?>

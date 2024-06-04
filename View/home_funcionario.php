@@ -16,7 +16,7 @@ include('../Controller/verifica_funcionario.php');
     <form method="post" action="../Controller/FuncionariosController.php">
         <button type="submit" name="perfil">Perfil</button>
     </form>
-    <form method="post" action="listarusuario.php">
+    <form method="post" action="../Controller/usuarioController.php">
         <button type="submit" name="listarusuario">Listar Usuários</button>
     </form>
     <form method="post" action="../Controller/FuncionariosController.php">
@@ -24,9 +24,6 @@ include('../Controller/verifica_funcionario.php');
     </form>
     <form method="post" action="livros.php">
         <button type="submit">Livros</button>
-    </form>
-    <form method="post" action="edicaolivros.php">
-        <button type="submit">LivrosEXPC</button>
     </form>
     <form method="post" action="home_funcionario.php">
         <input type="hidden" name="logout" value="true">

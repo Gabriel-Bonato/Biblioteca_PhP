@@ -142,5 +142,59 @@ class Usuario {
             echo "Erro: " . $e->getMessage();
         } 
     }
+
+    public function buscarUsuariosNoBanco(){
+        try {
+            $pdo = Conexao::conectar();
+
+            $sql = "SELECT * FROM usuario";
+            $stmt = $pdo->query($sql);
+    
+            
+            $result= $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+            
+        } catch (PDOException $e) {
+            echo "Erro ao buscar usuários: " . $e->getMessage();
+        }
+    }
+
+    public function DeletarUsuario($idUsuario,$tipo){
+        try {
+            $pdo = Conexao::conectar();
+        
+            
+            
+            
+            if($tipo =="funcionário"){
+                $stmt = $pdo->prepare("DELETE FROM funcionário WHERE idUser = :idUser");
+                $stmt->bindParam(':idUser', $idUsuario);
+                $stmt->execute();
+
+                $stmt = $pdo->prepare("DELETE FROM usuario WHERE iduser = ?");
+                $stmt->execute([$idUsuario]);
+
+                return true;
+
+            }
+            elseif($tipo =="leitor"){
+                $stmt = $pdo->prepare("DELETE FROM leitor WHERE idUser = :idUser");
+                $stmt->bindParam(':idUser', $idUsuario);
+                $stmt->execute();
+
+                $stmt = $pdo->prepare("DELETE FROM usuario WHERE iduser = ?");
+                $stmt->execute([$idUsuario]);
+
+                return true;
+
+            }else{
+                echo "usuario não encontrado!!";
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo "Erro ao deletar usuário: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 ?>

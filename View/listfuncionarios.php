@@ -3,7 +3,7 @@ session_start();
 
 
 $resultados = $_SESSION['resultados'];
-unset($_SESSION['resultados']); // Limpar os dados da sessão após o uso
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,7 @@ unset($_SESSION['resultados']); // Limpar os dados da sessão após o uso
     </style>
 </head>
 <body>
+    
     <h1>Lista de Funcionários</h1>
     <button onclick="window.location.href='cadastro_funcionario.php'">Criar Novo Funcionário</button>
     <table>
@@ -56,5 +57,6 @@ unset($_SESSION['resultados']); // Limpar os dados da sessão após o uso
             <?php endif; ?>
         </tbody>
     </table>
+    <a href="../View/home_funcionario.php">Home</a>
 </body>
 </html>

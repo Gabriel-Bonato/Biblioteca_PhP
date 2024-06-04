@@ -75,7 +75,7 @@ class funcionarioController{
             header("Location: ../View/cadastro_funcionario.php?error=1");
             exit();
         } else {
-            header("Location: ../View/listfuncionarios.php");
+            header("Location: ../View/home_funcionario.php");
             exit();
         }
     }
