@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
-    <link rel="stylesheet" href="./styleCadastroF.css">
+    <link rel="stylesheet" href="./styleCadastro.css">
     <script>
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -48,9 +48,21 @@
     </script>
 </head>
 <body>
+    <div class="conteiner">
+        <header>
+            <div class="linkhome"><a href="./index.php">
+                <h1>Logo da biblioteca</h1>
+            </a></div>
+            <div class="registro">
+                <a href="../Controller/redirecionar_login.php">
+                    <img src="../imagens/usu_icon.png" alt="20" width="80">
+                    <p>Login</p>
+                </a>
+            </div>
+        </header>
         <main>
-            <section>
-                
+            <div class="centro">
+                <div class="compra">
                     <?php
                     // Exibe a mensagem de erro, se existir
                     if (isset($_GET['error']) && $_GET['error'] == 1) {
@@ -61,45 +73,50 @@
                     }
                     ?>
                     <form action="../Controller/LeitoresController.php" method="post">
-                        
+                        <div class="form-group-inline">
                             <label for="nomeLeitor">Nome:</label>
-                            <input type="text" id="nomeLeitor" name="nomeLeitor">
-                        
-                        
+                            <input type="text" id="nomeLeitor" name="nomeLeitor" placeholder="Seu nome">
+                        </div>
+                        <div class="form-group-inline">
                             <label for="endereco">Endereço:</label>
-                            <input type="text" id="endereco" name="endereco">
-                        
+                            <input type="text" id="endereco" name="endereco" placeholder="Endereço">
+                        </div>
+                        <div class="form-group-inline">
                             <label for="phone">Telefone:</label>
-                            <input type="text" id="phone" name="phone">
-                        
+                            <input type="text" id="phone" name="phone" placeholder="Telefone">
+                        </div>
+                        <div class="form-group-inline">
                             <label for="CEPID">CEP:</label>
                             <input type="text" name="CEPID" id="CEPID" placeholder="CEP" oninput="maskCEP(this)" maxlength="9">
-                        
+                        </div>
+                        <div class="form-group-inline">
                             <label>Login</label>
                             <input type="text" name="login" id="login" placeholder="Seu login">
-                        
+                        </div>
+                        <div class="form-group-inline">
                             <label>Senha:</label>
                             <input type="password" name="senha" id="senha" placeholder="Sua senha">
-                        
+                        </div>
+                        <div class="form-group-inline">
                             <label for="tipoAssinatura">Tipo de Assinatura:</label>
                             <select name="selecao" id="selecao" onchange="atualizarPreco()">
                                 <option value="pacote1" id="opcao1">Pacote Inicial</option>
                                 <option value="pacote2" id="opcao2">Pacote Intermediario</option>
                                 <option value="pacote3" id="opcao3">Pacote Avançado</option>
                             </select>
-                        
-                            <button type="submit" value="Enviar" name="cadastrar">Enviar</button>
-
-                            <p>Preço: <span id="preco">R$ 50,00</span></p>
-                           
+                        </div>
+                        <div class="form-group-inline">
+                            <input type="submit" value="Enviar" name="cadastrar">
+                        </div>
                     </form>
-                    
-            </section>
-            <button onclick="window.location.href='../View/index.php'">Voltar Home</button>
-            
-            
+                    <p>Preço: <span id="preco">R$ 50,00</span></p>
+                </div>
+            </div>
         </main>
-        
-    
+        <footer>
+            <a href="./sobre.php">Sobre nós</a>
+            <a href="./comunidade.php">Comunidade</a>
+        </footer>
+    </div>
 </body>
 </html>
