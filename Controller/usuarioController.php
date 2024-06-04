@@ -97,6 +97,30 @@ class usuarioController{
         }
 
     }
+
+    public function resgatarSenha(){
+        
+        if(empty($_POST['loginrec'])){
+            
+            header("Location: ../View/recuperarsenha.php?error=1");
+            exit();
+        }else{
+            $login = $_POST['loginrec'];
+    
+            $user = new Usuario();
+            $senha = $user->resgatarSenha($login);
+            
+           
+            if ($senha == null) {
+                header("Location: ../View/recuperarsenha.php?error=2");
+                exit();
+            } else {
+                $_SESSION['senha_recuperada'] = $senha; 
+                header("Location: ../View/recuperarsenha.php"); 
+                exit();
+            }
+        }
+    }
 }
 
     
@@ -110,6 +134,11 @@ class usuarioController{
         $userController->ListarUsuarios();
        
     }
+    if (isset($_POST['Reuperarsenha'])) {
+        $userController = new usuarioController();
+        $userController->resgatarSenha();
+       
+    }
     if($_GET['acao'] == 'delete'){
         if(isset($_GET['id']) && !empty($_GET['id']))
         {
@@ -118,4 +147,5 @@ class usuarioController{
             $userController->deletarUsuario($idUsuario);
         }
     } 
+    
 ?>

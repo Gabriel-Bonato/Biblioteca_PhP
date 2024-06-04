@@ -20,7 +20,7 @@ if ($tipo === 'leitor') {
     header("Location: ../View/home_leitor.php");
     exit();
 } elseif ($tipo === 'funcionário') {
-    header("Location: ../View/home_funcionário.php ");
+    header("Location: ../View/home_funcionario.php ");
     exit();
 } else {
     header("Location: ../View/login.php");

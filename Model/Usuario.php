@@ -196,5 +196,25 @@ class Usuario {
             return false;
         }
     }
+
+    public function resgatarsenha($login)
+    {  
+        $pdo = Conexao::conectar();
+
+        $stmt = $pdo->prepare("SELECT Senha FROM usuario WHERE LoginUser = :loginr");
+        $stmt->bindParam("loginr",$login);
+        $stmt->execute();
+
+        $result= $stmt->fetch(PDO::FETCH_ASSOC);
+
+        
+        if($result==null){
+            return null;
+        }
+        else{
+            return $result;
+        }
+
+    }
 }
 ?>

@@ -34,13 +34,10 @@
 
                 <input id="button" type="submit" value="Entrar" name="login">
             </form>
+            <a href="../View/recuperarsenha.php">Esquici minha senha</a>
         </section>
     </main>
-    <?php
-    if (isset($_GET['erro'])) {
-        echo "<p style='color:red;'>Nome de usuário ou senha incorretos.</p>";
-    }
-    ?>
+
 </body>
 
 </html>
