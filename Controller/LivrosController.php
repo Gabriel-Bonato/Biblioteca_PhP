@@ -1,23 +1,14 @@
 <?php
 session_start();
-
-include_once(__DIR__ . '/../Model/livros.php');
+include_once(__DIR__ . '/../Model/LivroModel.php');
 
 class LivroController {
-    
     public function listarLivros() {
         $livroModel = new LivroModel();
         $livros = $livroModel->listarLivros();
-        
-        if (empty($livros)) {
-            // Redireciona para uma página de lista vazia ou trata conforme necessário
-            header("Location: ../View/lista_vazia.php");
-            exit();
-        } else {
-            $_SESSION['livros'] = $livros;
-            header("Location: ../View/lista_livros.php");
-            exit();
-        }
+        $_SESSION['livros'] = $livros;
+        header("Location: ../View/lista_livros.php");
+        exit();
     }
 
     public function inserirLivro() {
@@ -35,28 +26,26 @@ class LivroController {
 
         $livroModel = new LivroModel();
         $livroModel->inserirLivro($livro);
-
-        header("Location: ../View/lista_livros.php");
+        header("Location: ../View/cadastro_livro.php?success=1");
         exit();
     }
 
     public function atualizarLivro() {
-        if (empty($_POST['livroID']) || empty($_POST['titulo']) || empty($_POST['anoPublicacao']) || empty($_POST['genero']) || empty($_POST['autor'])) {
-            header("Location: ../View/editar_livro.php?error=1");
+        if (empty($_POST['titulo']) || empty($_POST['anoPublicacao']) || empty($_POST['genero']) || empty($_POST['autor']) || empty($_POST['livroID'])) {
+            header("Location: ../View/editar_livro.php?error=1&livroID=" . $_POST['livroID']);
             exit();
         }
 
         $livro = [
-            'livroID' => $_POST['livroID'],
             'titulo' => $_POST['titulo'],
             'anoPublicacao' => $_POST['anoPublicacao'],
             'genero' => $_POST['genero'],
-            'autor' => $_POST['autor']
+            'autor' => $_POST['autor'],
+            'livroID' => $_POST['livroID']
         ];
 
         $livroModel = new LivroModel();
         $livroModel->atualizarLivro($livro);
-
         header("Location: ../View/lista_livros.php");
         exit();
     }
@@ -68,19 +57,11 @@ class LivroController {
         }
 
         $livroID = $_POST['livroID'];
-
         $livroModel = new LivroModel();
         $livroModel->excluirLivro($livroID);
-
         header("Location: ../View/lista_livros.php");
         exit();
     }
-}
-
-// Tratamento dos diferentes envios de formulário
-if (isset($_POST['listarLivros'])) {
-    $livroController = new LivroController();
-    $livroController->listarLivros();
 }
 
 if (isset($_POST['inserirLivro'])) {
