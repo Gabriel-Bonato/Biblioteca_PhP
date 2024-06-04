@@ -44,6 +44,7 @@ input::placeholder {
     background-color: rgb(202, 174, 48);
     width: 100%;
     color: white;
+    
 }
 
 #button:hover {
