@@ -30,30 +30,11 @@ if (isset($_SESSION['dadosUsuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
-    <style>
-        .perfil-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        .perfil-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .perfil-item {
-            margin-bottom: 15px;
-        }
-        .perfil-item label {
-            font-weight: bold;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="./stylePerfil.css">
+    
 </head>
 <body>
-    <div class="perfil-container">
+    <section>
         <h1>Perfil do Usuário</h1>
         <?php if ($dadosUsuario): ?>
             <div class="perfil-item">
@@ -73,10 +54,12 @@ if (isset($_SESSION['dadosUsuario'])) {
                 <label>CPF:</label>
                 <div><?php echo htmlspecialchars($CPF); ?></div>
             </div>
+
+            <a href="./home_funcionario.php">Voltar ao home</a>
             
         <?php else: ?>
             <p>Não foi possível carregar os dados do usuário.</p>
         <?php endif; ?>
-    </div>
+    </section>
 </body>
 </html>

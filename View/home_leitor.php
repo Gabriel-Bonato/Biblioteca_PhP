@@ -8,6 +8,7 @@ include('../Controller/verifica_leitor.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Leitor</title>
+    <link rel="stylesheet" href="./styleHome.css">
 </head>
 <body>
     <h1>Bem-vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>

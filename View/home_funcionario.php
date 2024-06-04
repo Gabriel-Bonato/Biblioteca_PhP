@@ -8,6 +8,7 @@ include('../Controller/verifica_funcionario.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Funcionário</title>
+    <link rel="stylesheet" href="./styleHome.css">
 </head>
 <body>
     <h1>Bem-vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
@@ -25,7 +26,7 @@ include('../Controller/verifica_funcionario.php');
     <form method="post" action="livros.php">
         <button type="submit">Livros</button>
     </form>
-    <form method="post" action="home_funcionario.php">
+    <form method="post" action="home_funcionario.php?logout=true">
         <input type="hidden" name="logout" value="true">
         <button type="submit">Logout</button>
     </form>
