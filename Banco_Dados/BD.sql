@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS livro; -- Dropando a tabela caso ela já exista
 DROP TABLE IF EXISTS leitor; -- Dropando a tabela caso ela já exista
-DROP TABLE IF EXISTS Estados; -- Dropando a tabela caso ela já exista
 DROP TABLE IF EXISTS Funcionário; -- Dropando a tabela caso ela já exista
 
 CREATE TABLE leitor (
