@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Livro</title>
-    <link rel="stylesheet" href="./styleCadastroLivro.css">
+    <link rel="stylesheet" href="./sytleCadastroLivro.css">
 </head>
 <body>
     <section>
