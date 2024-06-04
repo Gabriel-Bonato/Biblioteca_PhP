@@ -47,9 +47,9 @@
                     <h1>Biblio Text</h1>
 
                     <strong>
-                        <p>Bem-vindo à [Nome da Biblioteca Virtual], um portal dedicado a oferecer acesso ilimitado a uma vasta coleção de recursos digitais. Nossa missão é democratizar o conhecimento, permitindo que pessoas de todas as idades e locais explorem e usufruam de conteúdos culturais e acadêmicos de alta qualidade.</p>
+                        <p>Bem-vindo à UPgrid, um portal dedicado a oferecer acesso ilimitado a uma vasta coleção de recursos digitais. Nossa missão é democratizar o conhecimento, permitindo que pessoas de todas as idades e locais explorem e usufruam de conteúdos culturais e acadêmicos de alta qualidade.</p>
 
-                        <p>Na [Nome da Biblioteca Virtual], você encontrará uma diversidade de materiais que atendem a diferentes interesses e necessidades educacionais. Nossa coleção inclui:</p>
+                        <p>Na UPgrid, você encontrará uma diversidade de materiais que atendem a diferentes interesses e necessidades educacionais. Nossa coleção inclui:</p>
 
                         <li>Livros Digitais: Acesse milhares de e-books, desde clássicos da literatura até obras contemporâneas, em diversos idiomas.</li>
                         <li>Artigos e Periódicos: Pesquise artigos acadêmicos, revistas científicas e periódicos de várias áreas do conhecimento.</li>
@@ -59,13 +59,13 @@
 
                         <p>Nosso portal é projetado para ser intuitivo e fácil de navegar, permitindo que você encontre rapidamente os recursos que precisa. Oferecemos diversas ferramentas de pesquisa e filtros avançados para refinar sua busca e facilitar o acesso ao conteúdo desejado.</p>
 
-                        <p>A [Nome da Biblioteca Virtual] também se dedica a apoiar a educação e a pesquisa. Por isso, disponibilizamos uma série de recursos educativos e guias de estudo para estudantes e pesquisadores. Nossa equipe está constantemente trabalhando para expandir nossa coleção e garantir que você tenha acesso às informações mais recentes e relevantes.</p>
+                        <p>A UPgrid também se dedica a apoiar a educação e a pesquisa. Por isso, disponibilizamos uma série de recursos educativos e guias de estudo para estudantes e pesquisadores. Nossa equipe está constantemente trabalhando para expandir nossa coleção e garantir que você tenha acesso às informações mais recentes e relevantes.</p>
 
                         <p>Além disso, promovemos uma série de eventos online, como webinars, workshops e palestras, que visam enriquecer o conhecimento dos nossos usuários e fomentar a troca de ideias e experiências.</p>
 
-                        <p>Convidamos você a explorar a [Nome da Biblioteca Virtual] e descobrir um mundo de conhecimento ao seu alcance. Seja para fins educacionais, pesquisa acadêmica ou simplesmente para satisfazer sua curiosidade, nossa biblioteca é o seu ponto de acesso a um vasto universo de informações digitais.</p>
+                        <p>Convidamos você a explorar a UPgrid e descobrir um mundo de conhecimento ao seu alcance. Seja para fins educacionais, pesquisa acadêmica ou simplesmente para satisfazer sua curiosidade, nossa biblioteca é o seu ponto de acesso a um vasto universo de informações digitais.</p>
 
-                        <p>Junte-se a nós e aproveite tudo o que a [Nome da Biblioteca Virtual] tem a oferecer. O conhecimento é a chave para o crescimento pessoal e coletivo, e estamos aqui para abrir essas portas para você.</p>
+                        <p>Junte-se a nós e aproveite tudo o que a UPgrid tem a oferecer. O conhecimento é a chave para o crescimento pessoal e coletivo, e estamos aqui para abrir essas portas para você.</p>
                     </strong>
                 </section>
 
@@ -111,7 +111,7 @@
 
         </main>
         <footer>
-            <p>2024 BibliotecaDaUP. Todos os direitos reservados &copy;.</p>
+            <p>2024 UPgrid. Todos os direitos reservados &copy;.</p>
         </footer>
     </div>
 </body>

@@ -208,7 +208,11 @@ button:hover {
 
 /* comunidade */
 
-.imgSocialMedia{
-  width: 100px;
-  margin: 30px;
+.socialMedia {
+  text-align: center; 
+}
+
+.imgSocialMedia {
+  width: 65px;
+  margin: 10px; /* Ajusta a margem dos ícones */
 }
