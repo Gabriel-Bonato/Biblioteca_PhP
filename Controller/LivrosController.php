@@ -28,7 +28,7 @@ class LivroController {
 
         $livroModel = new LivroModel();
         $livroModel->inserirLivro($livro);
-        header("Location: ../View/cadastro_livro.php?success=1");
+        header("Location: ../View/home_funcionario.php");
         exit();
     }
 
