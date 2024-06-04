@@ -15,7 +15,7 @@
             echo "<p style='color:green;'>Livro cadastrado com sucesso!</p>";
         }
         ?>
-        <form action="../Controller/LivroController.php" method="post">
+        <form action="../Controller/LivrosController.php" method="post">
             <label for="titulo">Título:</label><br>
             <input type="text" id="titulo" name="titulo" placeholder="Título do Livro"><br>
             <label for="anoPublicacao">Ano de Publicação:</label><br>

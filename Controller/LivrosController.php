@@ -3,6 +3,7 @@ session_start();
 
 include_once(__DIR__ . '/../Model/livros.php');
 
+
 class LivroController {
     
     public function listarLivros() {
@@ -22,7 +23,7 @@ class LivroController {
 
     public function inserirLivro() {
         if (empty($_POST['titulo']) || empty($_POST['anoPublicacao']) || empty($_POST['genero']) || empty($_POST['autor'])) {
-            header("Location: ../View/cadastro_livro.php?error=1");
+            header("Location: ../View/cadastrarlivro.php?error=1");
             exit();
         }
 
@@ -83,7 +84,7 @@ if (isset($_POST['listarLivros'])) {
     $livroController->listarLivros();
 }
 
-if (isset($_POST['inserirLivro'])) {
+if (isset($_POST['inserirLivro'])){
     $livroController = new LivroController();
     $livroController->inserirLivro();
 }
