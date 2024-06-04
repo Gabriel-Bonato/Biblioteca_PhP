@@ -93,4 +93,7 @@ END$$
 
 DELIMITER ;
 
+INSERT INTO usuario (LoginUser, Senha) VALUES ('Admin','senha');
+INSERT INTO funcionário (NomeFuncionario, CPF_FUNCIONARIO, iduser) VALUES ('Pablo pereira','165.367.290-05',1);
+
   
