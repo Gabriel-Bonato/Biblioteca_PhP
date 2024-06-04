@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 include("conexao.php");
 class Usuario {
     private $login;
@@ -125,6 +128,7 @@ class Usuario {
         
             // Obter o resultado
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            var_dump($result);
             
             if ($result!=null) {
                 $tipo=$result['tipo_usuario'];

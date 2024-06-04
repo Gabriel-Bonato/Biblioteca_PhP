@@ -3,13 +3,13 @@ session_start();
 
 // Verifica se o usuário está logado e se o tipo é 'funcionario'
 if (isset($_SESSION['usuario']) && isset($_SESSION['tipo'])) {
-    if ($_SESSION['tipo'] !== 'funcionario') {
+    if ($_SESSION['tipo'] !== 'funcionário') {
         // Se o tipo não for 'funcionario', redireciona para a página de login
         header("Location: ../View/login.php");
         exit();
     }
 } elseif (isset($_COOKIE['usuario']) && isset($_COOKIE['tipo_usuario'])) {
-    if ($_COOKIE['tipo_usuario'] !== 'funcionario') {
+    if ($_COOKIE['tipo_usuario'] !== 'funcionário') {
         // Se o tipo de cookie não for 'funcionario', redireciona para a página de login
         header("Location: ../View/login.php");
         exit();

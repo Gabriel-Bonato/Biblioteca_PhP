@@ -1,5 +1,5 @@
 <?php
-//include('../Controller/verifica_funcionario.php');
+include('../Controller/verifica_funcionario.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +10,10 @@
     <title>Home Funcionário</title>
 </head>
 <body>
-    <h1>Bem-vindo, <?php //echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
+    <h1>Bem-vindo, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
     <p>Você está logado como Funcionário. Aqui você pode gerenciar o sistema.</p>
 
-    <form method="post" action="perfil.php">
+    <form method="post" action="../Controller/FuncionariosController.php">
         <button type="submit" name="perfil">Perfil</button>
     </form>
     <form method="post" action="listarusuario.php">

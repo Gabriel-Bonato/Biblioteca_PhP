@@ -47,30 +47,35 @@ class Funcionario{
 
     public function buscarUsuario($user)
     {
-        try{
-             
-                $pdo = Conexao::conectar();
-
-           
-                // SQL para buscar os dados das tabelas funcionario e usuario
-                $stmt = $pdo->prepare("SELECT funcionario.*, usuario.LoginUser 
-                FROM funcionario 
-                INNER JOIN usuario ON funcionario.iduser = usuario.iduser
-                WHERE funcionario.iduser = :iduser");
-                $stmt->execute();
-                
-                // Obtenha todos os resultados
-                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-                if ($resultados ==  null) {
-                    return null;
-                } else {
-                    return $resultados;
-                }
+        try {
+            $pdo = Conexao::conectar();
             
+            // Select para obter o usuário pelo LoginUser
+        
+            $stmt = $pdo->prepare("SELECT * FROM usuario WHERE LoginUser = :loginm");
+            $stmt->bindParam("loginm", $user);
+            $stmt->execute(); // Passando o parâmetro como array associativo
+            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // Se o usuário existir, vamos obter o funcionário correspondente
+            if ($usuario) {
+                $iduser = $usuario['iduser'];
+                
+                // Select para obter o funcionário pelo iduser
+                $sqlFuncionario = "SELECT * FROM funcionário WHERE iduser = ?";
+                $stmtFuncionario = $pdo->prepare($sqlFuncionario);
+                $stmtFuncionario->execute([$iduser]);
+                $funcionario = $stmtFuncionario->fetch(PDO::FETCH_ASSOC);
+                
+                // Retornar um array com os resultados dos dois selects
+                return ['usuario' => $usuario, 'funcionário' => $funcionario];
+            }
+            
+            // Se o usuário não existir, retornamos null para indicar que não há resultados
+            return null;
         } catch (PDOException $erro) {
-            echo "Erro ao buscar dados: " . $erro->getMessage();
+            echo "Erro ao buscar usuário e funcionário: " . $erro->getMessage();
+            return null;
         }
     }
 
@@ -81,9 +86,9 @@ class Funcionario{
             $pdo = Conexao::conectar();
             
             // SQL para buscar todos os dados das tabelas funcionario e usuario
-            $sql = "SELECT funcionario.*, usuario.LoginUser 
-                    FROM funcionario 
-                    INNER JOIN usuario ON funcionario.iduser = usuario.iduser";
+            $sql = "SELECT funcionário.*, usuario.LoginUser 
+                    FROM funcionário 
+                    INNER JOIN usuario ON funcionário.iduser = usuario.iduser";
             
             // Prepare a declaração SQL
             $stmt = $pdo->prepare($sql);
@@ -101,31 +106,32 @@ class Funcionario{
         }
     }
 
-    public function cadasrarFuncionario(){
+    public function cadastrarFuncionario(){
         try {
             $pdo = Conexao::conectar();
-
-            $senha=$this->getSenha();
-            $login=$this->getLogin();
-            $nome=$this->getNomeFuncionario();
-            $cpf=$this->getCPF_FUNCIONARIO();
+    
+            $senha = $this->getSenha();
+            $login = $this->getLogin();
+            $nome = $this->getNomeFuncionario();
+            $cpf = $this->getCPF_FUNCIONARIO();
             
             // Inserir na tabela usuario primeiro
             $sqlUsuario = "INSERT INTO usuario (LoginUser, Senha) VALUES (?, ?)";
             $stmtUsuario = $pdo->prepare($sqlUsuario);
-            $stmtUsuario->execute([$login, password_hash($senha, PASSWORD_BCRYPT)]);
+            $stmtUsuario->execute([$login, $senha]);
             
             // Obter o último ID inserido para a tabela usuario
             $iduser = $pdo->lastInsertId();
             
             // Inserir na tabela funcionario
-            $sqlFuncionario = "INSERT INTO funcionario (NomeFuncionario, CPF_FUNCIONARIO, iduser) VALUES (?, ?, ?)";
+            $sqlFuncionario = "INSERT INTO funcionário (NomeFuncionario, CPF_FUNCIONARIO, iduser) VALUES (?, ?, ?)";
             $stmtFuncionario = $pdo->prepare($sqlFuncionario);
             $stmtFuncionario->execute([$nome, $cpf, $iduser]);
     
             return true;
         } catch (PDOException $erro) {
             echo "Erro ao cadastrar funcionário: " . $erro->getMessage();
+            return false; // Retorna false em caso de erro
         }
     }
 }
