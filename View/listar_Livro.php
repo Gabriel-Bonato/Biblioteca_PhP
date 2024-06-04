@@ -33,7 +33,8 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
                 <?php
                 if ($_SESSION['tipo'] === "funcionário") {
                 ?>
-                <th>Ações</th>
+                <th>Ação</th>
+
                 <?php
                 }
                 ?>
@@ -48,16 +49,21 @@ $tipoUsuario = isset($_COOKIE['tipo-usuario']) ? $_COOKIE['tipo-usuario'] : '';
                     echo "<td>" . htmlspecialchars($livro['livroID']) . "</td>";
                     
                     
+                    
                     echo "<td>" . htmlspecialchars($livro['titulo']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['anoPublicacao']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['genero']) . "</td>";
                     echo "<td>" . htmlspecialchars($livro['autor']) . "</td>";
+                    
+                    
                     if ($_SESSION['tipo'] === "funcionário") {?>
-                        <td><a href="../Controller/LivrosController.php?= $livro['livroID'] ?>">Delete</a>
-                        <a href="id=<?= $livro['livroID'] ?>">Editar</a></td>
+                        <td><a href="../Controller/LivrosController.php?id=<?php echo $livro['livroID']; ?>">Delete</a>
+
+                        <a href="./editar_livro.php?id=<?php echo $livro['livroID']; ?>">Editar</a></td>
                         <?php
                     
                     }
+                    
                     echo "</td>";
                     echo "</tr>";
                 }

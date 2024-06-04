@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
 
     <title>Editar Livro</title>
+    <link rel="stylesheet" href="./styleCadastroF.css">
 
 </head>
 
@@ -22,9 +23,9 @@
 
         // Verificar se o ID do livro está definido e não está vazio
 
-        if (isset($_GET['livroID']) && !empty($_GET['livroID'])) {
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
 
-            $livroID = $_GET['livroID'];
+            $livroID = $_GET['id'];
 
  
 
@@ -58,7 +59,7 @@
 
  
 
-        <form action="../Controller/LivroController.php" method="post">
+        <form action="../Controller/LivrosController.php" method="post">
 
             <input type="hidden" name="livroID" value="<?php echo $livroID; ?>">
 

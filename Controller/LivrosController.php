@@ -45,23 +45,24 @@ class LivroController {
             'autor' => $_POST['autor'],
             'livroID' => $_POST['livroID']
         ];
+        
 
         $livroModel = new LivroModel();
         $livroModel->atualizarLivro($livro);
-        header("Location: ../View/lista_livros.php");
+        header("Location: ../View/home_funcionario.php");
         exit();
     }
 
-    public function excluirLivro() {
-        if (empty($_POST['livroID'])) {
+    public function excluirLivro($idlivro) {
+        if (empty($idlivro)) {
             header("Location: ../View/lista_livros.php?error=1");
             exit();
         }
 
-        $livroID = $_POST['livroID'];
+        
         $livroModel = new LivroModel();
-        $livroModel->excluirLivro($livroID);
-        header("Location: ../View/lista_livros.php");
+        $livroModel->excluirLivro($idlivro);
+        header("Location: ../View/home_funcionario.php");
         exit();
     }
 }
@@ -76,13 +77,18 @@ if (isset($_POST['atualizarLivro'])) {
     $livroController->atualizarLivro();
 }
 
-if (isset($_POST['excluirLivro'])) {
-    $livroController = new LivroController();
-    $livroController->excluirLivro();
-}
+    if(isset($_GET['id']) && !empty($_GET['id']))
+    {
+        $idlivro = $_GET['id'];
+        $livroController = new LivroController();
+        $livroController->excluirLivro($idlivro);
+    }
+
+
 if (isset($_POST['listarLivro'])) {
     $livroController = new LivroController();
     $livroController->listarLivros();
 }
+
 
 ?>
