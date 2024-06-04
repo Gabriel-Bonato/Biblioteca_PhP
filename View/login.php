@@ -11,6 +11,7 @@
 <body>
     <main>
         <section>
+        <a href="../View/index.php">HOME</a>
             <h1>Fazer Login</h1><?php
             // Exibe a mensagem de erro, se existir
 

@@ -51,7 +51,7 @@
     <div class="conteiner">
         <header>
             <div class="linkhome"><a href="./index.php">
-                <h1>Cadastro</h1>
+                <h1>HOME</h1>
             </a></div>
             <div class="registro">
                 <a href="../Controller/redirecionar_login.php">
