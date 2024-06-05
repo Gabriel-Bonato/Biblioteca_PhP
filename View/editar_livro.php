@@ -9,6 +9,13 @@
     <title>Editar Livro</title>
     <link rel="stylesheet" href="./styleCadastroF.css">
 
+    <script>
+        // Adiciona uma máscara para permitir apenas 4 dígitos e números no campo de "Ano de Publicação"
+        document.getElementById('anoPublicacao').addEventListener('input', function(event) {
+            this.value = this.value.replace(/\D/g, '').substring(0, 4);
+        });
+    </script>
+
 </head>
 
 <body>
@@ -65,19 +72,19 @@
 
             <label for="titulo">Título:</label>
 
-            <input type="text" id="titulo" name="titulo" value="<?php echo htmlspecialchars($livro['titulo']); ?>" required>
+            <input type="text" id="titulo" name="titulo" placeholder="<?php echo htmlspecialchars($livro['titulo']); ?>" required>
 
             <label for="anoPublicacao">Ano de Publicação:</label>
 
-            <input type="number" id="anoPublicacao" name="anoPublicacao" value="<?php echo htmlspecialchars($livro['anoPublicacao']); ?>" required>
+            <input type="text" id="anoPublicacao" name="anoPublicacao" placeholder="<?php echo htmlspecialchars($livro['anoPublicacao']); ?>" required>
 
             <label for="genero">Gênero:</label>
 
-            <input type="text" id="genero" name="genero" value="<?php echo htmlspecialchars($livro['genero']); ?>" required>
+            <input type="text" id="genero" name="genero" placeholder="<?php echo htmlspecialchars($livro['genero']); ?>" required>
 
             <label for="autor">Autor:</label>
 
-            <input type="text" id="autor" name="autor" value="<?php echo htmlspecialchars($livro['autor']); ?>" required>
+            <input type="text" id="autor" name="autor" placeholder="<?php echo htmlspecialchars($livro['autor']); ?>" required>
 
             <input type="submit" name="atualizarLivro" value="Atualizar">
 
